@@ -1,3 +1,5 @@
+console.log('script.js loaded');
+
 let keys = document.querySelectorAll('.key');
 
 keys.forEach(function(key) {
