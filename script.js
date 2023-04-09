@@ -1,6 +1,6 @@
 console.log('script.js loaded');
 
-let keys = document.querySelectorAll('.key');
+let keys = document.querySelectorAll('.keys');
 
 keys.forEach(function(key) {
     key.addEventListener('click', function() {
