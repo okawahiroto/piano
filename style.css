@@ -1,27 +1,47 @@
-.piano {
-	display: flex;
-	flex-wrap: wrap;
-	height: 200px;
-	background-color: #eee;
-	padding: 10px;
-}
-
-.key {
-	width: 30px;
-	height: 120px;
-	margin-right: 1px;
-	margin-bottom: 10px;
-	border: 1px solid #333;
-}
-
 .white {
-	background-color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.square {
+  width: 80px;
+  height: 240px;
+  border: 1px solid black;
+	box-sizing:border-box;
+  float: left;
 }
 
 .black {
-	background-color: #000;
-	width: 20px;
-	height: 80px;
-	margin-left: -10px;
-	z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: -40px;
+}
+
+.square2 {
+  width: 80px;
+  height: 160px;
+  border: 1px solid white;
+  background-color: black;
+	box-sizing:border-box;
+  float: left;
+  z-index: 1;
+}
+
+.black2 {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+}
+
+.black3 {
+  position: absolute;
+  top: 0px;
+  left: 440px;
+}
+
+.black4 {
+  position: absolute;
+  top: 0px;
+  left: 760px;
 }
