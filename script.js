@@ -8,3 +8,8 @@ keys.forEach(function(key) {
         console.log('You clicked the ' + note + ' key.');
     });
 });
+
+// 押し下げたキーをコンソールに表示
+document.addEventListener('keydown', function(event) {
+    console.log("Key '" + event.key + "' has been pressed.");
+});
