@@ -13,3 +13,8 @@ keys.forEach(function(key) {
 document.addEventListener('keydown', function(event) {
     console.log("Key '" + event.key + "' has been pressed.");
 });
+
+// 押し上げた(押された後離された)キーをコンソールに表示
+document.addEventListener('keyup', function(event) {
+    console.log("Key '" + event.key + "' has been released.");
+});
