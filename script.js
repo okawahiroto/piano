@@ -9,6 +9,7 @@ console.log(keyAlphabet.indexOf('a'));
 let audioCtx = new AudioContext();
 const gainNode = audioCtx.createGain();
 let oscillator = audioCtx.createOscillator();
+let oscillator02 = audioCtx.createOscillator();
 
 // ゲインノードの設定
 gainNode.gain.value = 0.1;
@@ -50,3 +51,7 @@ document.addEventListener('keyup', function(event) {
     oscillator = audioCtx.createOscillator();
 });
 
+document.addEventListener('keydown', function(event) {
+  console.log("Key '" + event.key + "' has been pressed.");
+  console.log("Keys pressed: " + event.key + ", " + event.code + ", " + event.which);
+});
