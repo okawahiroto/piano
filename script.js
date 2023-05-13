@@ -20,35 +20,35 @@ gainNode.connect(audioCtx.destination);
 let keys = document.querySelectorAll('.keys');
 
 keys.forEach(function(key) {
-    key.addEventListener('click', function() {
-        let note = this.getAttribute('data-note');
-        console.log('You clicked the ' + note + ' key.');
-    });
+  key.addEventListener('click', function() {
+      let note = this.getAttribute('data-note');
+      console.log('You clicked the ' + note + ' key.');
+  });
 });
 
 // 押し下げたキーをコンソールに表示
 document.addEventListener('keydown', function(event) {
-    console.log("Key '" + event.key + "' has been pressed.");
+  console.log("Key '" + event.key + "' has been pressed.");
 
-    // 押し下げたキーのインデックス(Aを0番目として、半音ごとに+1)
-    let halfStepOffset = keyAlphabet.indexOf(event.key);
-    console.log(halfStepOffset);
+  // 押し下げたキーのインデックス(Aを0番目として、半音ごとに+1)
+  let halfStepOffset = keyAlphabet.indexOf(event.key);
+  console.log(halfStepOffset);
 
-    // 周波数を計算する(440HzのAを基準にインデックスを用いて計算)
-    oscillator.frequency.value = 440 * Math.pow(2, halfStepOffset / 12);
+  // 周波数を計算する(440HzのAを基準にインデックスを用いて計算)
+  oscillator.frequency.value = 440 * Math.pow(2, halfStepOffset / 12);
 
-    oscillator.type = "sine";
-    oscillator.connect(gainNode);
+  oscillator.type = "sine";
+  oscillator.connect(gainNode);
 
-    oscillator.start();
+  oscillator.start();
 
 });
 
 // 押し上げた(押された後離された)キーをコンソールに表示
 document.addEventListener('keyup', function(event) {
-    console.log("Key '" + event.key + "' has been released.");
-    oscillator.stop();
-    oscillator = audioCtx.createOscillator();
+  console.log("Key '" + event.key + "' has been released.");
+  oscillator.stop();
+  oscillator = audioCtx.createOscillator();
 });
 
 document.addEventListener('keydown', function(event) {
